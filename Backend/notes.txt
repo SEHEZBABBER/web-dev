@@ -51,4 +51,4 @@ Query String : app.get('/hillo',(req,res)=>{
 }) anything you write after the mmntioned route and a ? is stored in req.query let say you write q = fasdfas it is stored as {q:"fasdfas"}
 -------------------------------------------------------------------------------------------------------------------
 
-Templating : 
+Templating : template is a blue print of a web page 
