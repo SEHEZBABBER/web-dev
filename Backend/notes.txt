@@ -1,0 +1,54 @@
+Node js : it is a runtime environment used to run js in a local machine or a compiler before it we used to run it only in browser with help of this you can run js files directly and see the console logs in terminal 
+just  go and write node in terminal and start running js code inside the terminal or you can run js files in terminal directly
+    Process - obj : the object provides information about the current Node js process in form of a obj info like version , realease info etc.
+    process.argv : by default it return a array containing 2 values first in the folder location where node is stored and then the location of js file that we are running 
+    node hello.js argument1 argument2 these are the arguments passed process.argv = [node_location,file_location,argument1,argument2]
+
+importing and exporting things :
+    require : used to import things from external libraried
+    module.export : exports the obj that you want to export 
+npm : it is a node package manager i can gift wrap anythin useful that i made which can be installed by people to use it in there code it is a library of package and it is a command line tool 
+
+there is a folder named as node_modules which is suppose to hold the installed dependency 
+package-lock.json : it is a file that has list of all the installed packages containing info like sub dependency versions etc.
+package.json : constains descriptive and funcitonal meta data about a project such as name version dependency etc.
+
+with help of import keyword you can imoort only the required funciton which saves memory as compare to require and is asynchronus but require loads obj in synchronus mode 
+
+-------------------------------------------------------------------------------------------------------------------
+
+Day 2 : 
+
+Library vs FrameWork : 
+
+library is used to perform a specific task 
+FrameWork is used to develop a web application
+
+express is a FrameWork it is used for server side programing {server accepts request and then send response}
+express is used for 4 purposes :
+1 . listening for a incoming requrest
+2 . matching the requrest to proper route
+3 . sending a proper response
+4 . sometime you need to parese the request 
+
+const express = require("express");
+const app  = express();
+app.listen(8080,()=>{
+    console.log("listening");
+}) this is how a basic express code looks like then we studied app.use just for getting all kind of request it taked all the request if then you use app.get it will take it request also 
+app.get('/hi',(req,res)=>{
+    res.send("<h1>Hi</h1>");
+}) this is how app.get looks like 
+
+Path parameters : app.get("/:username",(req,res)=>{
+    let {username} = req.params;
+    res.send(`Hello i am ${username}`);
+}) with this we dont need to make a route for each and every user but all the user will get tehre own route with help of path params
+
+Query String : app.get('/hillo',(req,res)=>{
+    console.log(req.query);
+    res.send("no results");
+}) anything you write after the mmntioned route and a ? is stored in req.query let say you write q = fasdfas it is stored as {q:"fasdfas"}
+-------------------------------------------------------------------------------------------------------------------
+
+Templating : 
